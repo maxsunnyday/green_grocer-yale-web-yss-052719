@@ -56,5 +56,10 @@ def checkout(cart, coupons)
   clearance_cart.each do |item, hash|
     total += hash[:price] * hash[:count]
   end
+  if total > 100
+    new_total = total * 9 / 10
+  else
+    new_total = total
+  end
   total
 end
