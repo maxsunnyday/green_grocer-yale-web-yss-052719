@@ -57,7 +57,7 @@ def checkout(cart, coupons)
     total += hash[:price] * hash[:count]
   end
   if total > 100
-    new_total = total * 9 / 10
+    new_total = total * 0.9
   else
     new_total = total
   end
