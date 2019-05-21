@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
   if cart.keys.include?("CHEESE")
     cart["CHESSE"][:count] = 5
   end
+  cart
   new_cart = {}
   cart.each do |item, hash|
     new_hash = hash
