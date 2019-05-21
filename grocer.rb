@@ -61,5 +61,5 @@ def checkout(cart, coupons)
   else
     new_total = total
   end
-  total
+  new_total
 end
