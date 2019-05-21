@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
             clearance: new_hash[:clearance],
             count: count
           }
-          new_hash[:count] -= coupon[:num]
+          #new_hash[:count] -= coupon[:num]
         end
       end
     end
