@@ -23,7 +23,6 @@ def apply_coupons(cart, coupons)
     coupons.each do |coupon|
       keys = new_cart.keys
       if item == coupon[:item]
-        puts coupon
         if new_hash[:count] >= coupon[:num]
           if keys.include?("#{item} W/COUPON")
             new_cart["#{item} W/COUPON"][:count] += 1
@@ -34,6 +33,7 @@ def apply_coupons(cart, coupons)
               clearance: new_hash[:clearance],
               count: 1
             }
+            puts new_cart
             new_hash[:count] -= coupon[:num]
           end
         end
