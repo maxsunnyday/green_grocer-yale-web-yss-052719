@@ -21,9 +21,10 @@ def apply_coupons(cart, coupons)
   cart.each do |item, hash|
     new_hash = hash
     coupons.each do |coupon|
+      keys = new_cart.keys
       if item == coupon[:item]
         if new_hash[:count] >= coupon[:num]
-          if new_cart.keys.include?("#{item} W/COUPON")
+          if keys.include?("#{item} W/COUPON")
             new_cart["#{item} W/COUPON"][:count] += 1
             new_hash[:count] -= coupon[:num]
           else
