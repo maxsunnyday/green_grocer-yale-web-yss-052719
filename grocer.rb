@@ -18,8 +18,8 @@ end
 
 def apply_coupons(cart, coupons)
   new_cart = {}
+  puts cart["CHEESE"]
   cart.each do |item, hash|
-    puts hash
     new_hash = hash
     coupons.each do |coupon|
       keys = new_cart.keys
