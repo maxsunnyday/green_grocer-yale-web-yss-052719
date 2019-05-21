@@ -19,8 +19,8 @@ end
 def apply_coupons(cart, coupons)
   new_cart = {}
   cart.each do |item, hash|
+    puts hash
     new_hash = hash
-    puts new_hash
     coupons.each do |coupon|
       keys = new_cart.keys
       if item == coupon[:item]
