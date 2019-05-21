@@ -20,10 +20,10 @@ def apply_coupons(cart, coupons)
   new_cart = {}
   cart.each do |item, hash|
     new_hash = hash
+    puts new_hash
     coupons.each do |coupon|
       keys = new_cart.keys
       if item == coupon[:item]
-        puts new_hash
         if new_hash[:count] >= coupon[:num]
           if keys.include?("#{item} W/COUPON")
             new_cart["#{item} W/COUPON"][:count] += 1
