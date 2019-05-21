@@ -25,12 +25,17 @@ def apply_coupons(cart, coupons)
       if item == coupon[:item]
         if new_hash[:count] >= coupon[:num]
           count += 1
-          new_cart["#{item} W/COUPON"] = {
-            price: coupon[:cost],
-            clearance: new_hash[:clearance],
-            count: count
-          }
-          new_hash[:count] -= coupon[:num]
+          if new_cart.keys.include?("#{item} W/COUPON")
+            new_cart["#{item} W/COUPON"][:count] += 1
+            new_hash[:count] -= coupon[:num]
+          else
+            new_cart["#{item} W/COUPON"] = {
+              price: coupon[:cost],
+              clearance: new_hash[:clearance],
+              count: count
+            }
+            new_hash[:count] -= coupon[:num]
+          end
         end
       end
     end
