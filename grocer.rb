@@ -33,7 +33,6 @@ def apply_coupons(cart, coupons)
               clearance: new_hash[:clearance],
               count: 1
             }
-            binding.pry
             new_hash[:count] -= coupon[:num]
           end
         end
