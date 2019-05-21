@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
     coupons.each do |coupon|
       keys = new_cart.keys
       if item == coupon[:item]
-        binding.pry
+        puts coupon
         if new_hash[:count] >= coupon[:num]
           if keys.include?("#{item} W/COUPON")
             new_cart["#{item} W/COUPON"][:count] += 1
