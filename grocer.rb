@@ -4,11 +4,10 @@ def consolidate_cart(cart)
   cart.each do |big_hash|
     big_hash.each do |item, hash|
       new_hash = hash
-      count = 1
-      new_hash[:count] = count
       if new_cart.keys.include?(item)
         new_cart[item][:count] += 1
       else
+        new_hash[:count] = 1
         new_cart[item] = new_hash
       end
     end
