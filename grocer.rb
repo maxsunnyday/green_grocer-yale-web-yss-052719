@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
           if keys.include?("#{item} W/COUPON")
             new_cart["#{item} W/COUPON"][:count] += 1
             new_hash[:count] -= coupon[:num]
-            puts "hi"
+            puts "hfjsakfds;afjdklsafjls;da"
           else
             new_cart["#{item} W/COUPON"] = {
               price: coupon[:cost],
